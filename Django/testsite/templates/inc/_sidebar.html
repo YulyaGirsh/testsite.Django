@@ -1,0 +1,13 @@
+{% load places_tags %}
+
+<div class="col-md-3">
+    <div class="list-group">
+        {% get_categories as categories %}
+        {% for item in categories %}
+        <a class="list-group-item list-group-item-action "
+        >{{ item.title}}</a>
+        {% endfor %}
+    </div>
+</div>
+
+

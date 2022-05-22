@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{place_item.title}}
+{% endblock %}
+
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html'%}
+{% endblock %}
+
+{% block content %}
+<div class="col-md-8">
+
+    <div class="card mb-3">
+        <h5 class="card-header"> Категория: {{place_item.category}} </h5>
+        <div class="card-body">
+            <div class="media">
+                {% if item.photo %}
+                <img src="{{ place_item.photo.url }}" alt="" width="350" class="mr-3">
+                {% endif %}
+                <div class="media-body">
+                    <h5 class="card-title">{{ place_item.title }}</h5>
+                    <p class="card-text">{{place_item.content|safe}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            {{ place_item.creates_at|date:"Y-m-d H:i:s" }}
+        </div>
+    </div>
+</div>
+{% endblock %}
