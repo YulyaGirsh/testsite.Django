@@ -7,7 +7,7 @@ def index(request):
     places = Places.objects.all()
     context = {
         'places': places,
-        'title': 'Мои любимые места',
+        'title': 'Направления',
     }
     return render(request, 'mainpage/index.html', context)
 
